@@ -22,12 +22,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # إعداد مجلد العمل
 WORKDIR /var/www
 
-# نسخ ملفي composer.json و composer.lock
-COPY composer.json composer.lock ./
-
-# تثبيت مكتبات Composer مع السماح بتشغيله كـ root
-RUN export COMPOSER_ALLOW_SUPERUSER=1 && composer install --no-dev --optimize-autoloader
-
 # نسخ كافة ملفات المشروع
 COPY . .
 
@@ -35,6 +29,9 @@ COPY . .
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage \
     && chmod -R 755 /var/www/bootstrap/cache
+
+# تثبيت مكتبات Composer مع السماح بتشغيله كـ root
+RUN export COMPOSER_ALLOW_SUPERUSER=1 && composer install --no-dev --optimize-autoloader
 
 # تعيين المستخدم إلى www-data
 USER www-data
