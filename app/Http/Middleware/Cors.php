@@ -1,4 +1,4 @@
-// app/Http/Middleware/Cors.php
+<?php
 
 namespace App\Http\Middleware;
 
