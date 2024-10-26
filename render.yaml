@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: laravel-app
+    env: docker
+    buildCommand: "composer install && php artisan key:generate && php artisan migrate --force"
+    startCommand: "php artisan serve --host=0.0.0.0 --port=8000"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        fromDatabase: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: sql8.freemysqlhosting.net
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: sql8740533
+      - key: DB_USERNAME
+        value: sql8740533
+      - key: DB_PASSWORD
+        value: 4jjMrAYqwJ
+    dockerfilePath: Dockerfile
+    healthCheckPath: "/"
+    autoDeploy: true
