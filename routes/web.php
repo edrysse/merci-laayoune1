@@ -90,7 +90,7 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// tests : 
+// tests :
 
 // Route::get('/test', function() {return view('client.validation');});
 // Route::get('/test', [ComndController::class, 'index']);
@@ -114,9 +114,10 @@ Route::get('/url-of-checkout', [CheckoutController::class, 'yourMethod']);// Par
 
 
 // Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
-Route::get('payment', [CheckoutController::class, 'store'])->name('payment');
+Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
 Route::get('cancel', [PayPalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
+
 
 
 
