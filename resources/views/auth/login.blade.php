@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('auth.includes.header')
+<header>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+</header>
 <body>
 
     <div class="limiter">
