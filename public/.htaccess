@@ -24,7 +24,7 @@
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
     Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
-    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
 </IfModule>
 
 # MIME Types for CSS, JavaScript, Fonts, and Icon Files
@@ -56,3 +56,8 @@
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType image/webp "access plus 1 month"
 </IfModule>
+
+# Use CDN links for external libraries (optional)
+# Uncomment and include these links in your HTML if local files are still blocked
+# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/0.1.2/css/themify-icons.min.css">
