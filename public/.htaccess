@@ -57,7 +57,7 @@
     ExpiresByType image/webp "access plus 1 month"
 </IfModule>
 
-# Use CDN links for external libraries (optional)
-# Uncomment and include these links in your HTML if local files are still blocked
-# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/0.1.2/css/themify-icons.min.css">
+# Allow access to specific static files that are blocked
+<FilesMatch "\.(css|js|ttf|woff|woff2|svg|png|jpg|jpeg|gif)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
