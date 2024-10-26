@@ -105,7 +105,7 @@
                 name="image" /> --}}
             {{-- <input type="file"  id="exampleFormControlTextarea1"name="image" value="{{ $repa->image }}"/> --}}
 
-            <label for="fileupload"><button class="envoyer">Ajouter une image</button></label>
+            <label for="fileupload" class="envoyer" style="color: black">Ajouter une image</label>
             <input type="file" name="image" id="fileupload" style="display:none;" value="{{ $repa->image }}"/>
             {{ $repa->image }}
         </div>

@@ -47,6 +47,8 @@ Route::get('/Coupon/create', [App\Http\Controllers\CouponController::class, 'sto
 Route::get('/Coupon/add', [App\Http\Controllers\CouponController::class, 'addCoupon'])->name('coupon.add');
 Route::get('/repas/specific', [App\Http\Controllers\RepasConroller::class, 'index_type'])->name('repa.type');
 
+Route::patch('/commande/Payée/{id}', [App\Http\Controllers\ComndController::class, 'payee'])->name('comnd.payee');
+
 Route::resource('pannier', pannierController::class);
 Route::resource('repas',RepasConroller::class);
 Route::resource('contact', ContactConroller::class);

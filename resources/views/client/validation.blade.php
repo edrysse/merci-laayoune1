@@ -451,9 +451,10 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                     </svg>
                 </div>
                 <div class="text-center">
-                    <h1>Thank You !</h1>
-                    <p>We've send the link to your inbox. Lorem ipsum dolor sit,lorem lorem </p>
-                    <button class="btn btn-outline-success">Back Home</button>
+                    <h1>Merci !</h1>
+                    <p>Votre commande est retenue</p>
+                    <a class="btn btn-outline-success" href="{{ route('clientIndex.index') }}">Fermer</a>
+                    {{-- <button class="btn btn-outline-success">Accueil</button> --}}
                 </div>
             </div>
         

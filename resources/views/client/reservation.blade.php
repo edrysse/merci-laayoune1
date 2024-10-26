@@ -496,9 +496,10 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
                     </svg>
                 </div>
                 <div class="text-center">
-                    <h1>Thank You !</h1>
-                    <p>{{$msg}}</p>
-                    <button class="btn btn-outline-success">Back Home</button>
+                    <h1>Merci !</h1>
+                    {{-- <p>{{$msg}}</p> --}}
+                    <p>Votre commande est retenue</p>
+                    <button class="btn btn-outline-success">Fermer</button>
                 </div>
             </div>
         

@@ -27,6 +27,18 @@ class ComndController extends Controller
         return view('commande.index',compact('comnds'));
     }
 
+    public function payee($id)
+    {
+        //
+        // Page::where('id', $id)->update(array('image' => 'asdasd'));
+        comnd::where('id', $id)->update(array('state' => 'Payée'));
+        
+        // $comnd = comnd::find($id);
+        // $comnd->state = "Payée";
+        // $comnd->save();
+        return redirect()->back();
+    }
+
     /**
      * Show the form for creating a new resource.
      */

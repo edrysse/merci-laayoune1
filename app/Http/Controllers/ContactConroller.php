@@ -43,7 +43,8 @@ class ContactConroller extends Controller
             'phone' => $request->phone,
             'message' => $request->message,
           ]);
-        return redirect()->route('contact.index')->with('succes', 'added succeffly')->with('profile',$profile);
+        // return redirect()->route('contact.index')->with('succes', 'added succeffly')->with('profile',$profile);
+        return redirect()->back()->with('succes', 'added succeffly');
     }
 
     public function show(Contact $contact)

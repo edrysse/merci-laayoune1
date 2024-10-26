@@ -118,7 +118,11 @@
 
     
 <div class="section-gallery p-t-118 p-b-100">
-    <div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25">
+    {{-- <div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25"> --}}
+    <div class="" style="    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}">
         @foreach ($photos as $item)
             <div style="width:250px" class="item-gallery isotope-item bo-rad-10 hov-img-zoom {{ $item->type }}">
                 <img style="object-fit: cover;

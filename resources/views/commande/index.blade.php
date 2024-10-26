@@ -79,6 +79,11 @@
                             {{-- <a class="btn btn-primary" href="{{ route('comnd.edit', $item->id) }}"><i
                                     class="fa-solid fa-pen-to-square"></i></a> --}}
                         
+                            <form action="{{ route('comnd.payee', $item->id) }}" method="post">
+                                <button type="submit" class="btn btn-success">Payée</button>
+                                @csrf
+                                @method('PATCH')
+                            </form>
                             <form action="{{ route('comnd.destroy', $item->id) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf

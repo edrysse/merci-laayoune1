@@ -6,13 +6,13 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-                <div class="login100-pic js-tilt" data-tilt>
-                    <img src={{ asset('loginpage/images/img-01.png') }} alt="IMG">
+                <div class="login100-pic" >
+                    <img src={{ asset('clientpage/images/MERCI_IMG/logo_header/Logo-Merci-b4.png') }} alt="IMG">
                 </div>
                 <form method="POST" action="{{ route('register') }}" class="login100-form validate-form">
                     @csrf
                     <span class="login100-form-title">
-                        Member register
+                        Admin register
                     </span>
                     <div class="wrap-input100 validate-input">
                         <input id="name" type="text" class="input100 @error('name') is-invalid @enderror"

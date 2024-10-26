@@ -324,9 +324,65 @@ des commentaires ou des réservations spéciales, n'hésitez pas à entrer en co
 
         </div>
     </section>
+
+
+
+
+
+
     
     <!-- Map -->
     <section class="google-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.1794475737815!2d-13.199997324777996!3d27.150643649825604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc3773a103f1c107%3A0xa1eb7796bf4aba3!2sMerci%20Laayoune!5e0!3m2!1sen!2s!4v1692271441632!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
+
+
+
+
+
+    <script src="assets/js/jquery.js"></script>
+         <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="vh-100 d-flex justify-content-center align-items-center">
+            <div class="card col-md-4 bg-white shadow-md p-5">
+                <div class="mb-4 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-success" width="75" height="75"
+                        fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <h1>Merci !</h1>
+                    <p>Votre message est envoyé avec succès</p>
+                    {{-- <a class="btn btn-outline-success" href="{{ route('clientIndex.index') }}">Fermer</a> --}}
+                    <button class="btn btn-outline-success">Fermer</button>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+@if ($msg = Session::get('succes'))
+
+
+    @php
+         echo '<script type="text/javascript">
+            $(document).ready(function(){
+                $("#exampleModalCenter").modal("show");
+            });
+        </script>';
+    @endphp
+    
+@endif
+
+
 @endsection
