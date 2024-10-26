@@ -1,31 +1,20 @@
 # Laravel
-/vendor
+/.phpunit.cache
 /node_modules
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
-
-# IDE specific
-/.idea
-/.vscode
-
-# PHPUnit
-/.phpunit.cache
-.phpunit.result.cache
-
-# Environment files
+/vendor
 .env
 .env.backup
 .env.production
-
-# Logs
-npm-debug.log
-yarn-error.log
-
-# Other
+.phpunit.result.cache
 Homestead.json
 Homestead.yaml
 auth.json
+npm-debug.log
+yarn-error.log
 /.fleet
-/.vercel
+/.idea
+/.vscode
