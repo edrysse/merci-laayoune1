@@ -34,5 +34,11 @@ RUN chown -R www-data:www-data /var/www \
 # تثبيت مكتبات Composer مع السماح بتشغيله كـ root
 RUN composer install --no-dev --optimize-autoloader
 
+# تحديد المنفذ 80 ليتمكن Render من اكتشافه
+EXPOSE 80
+
 # تعيين المستخدم إلى www-data
 USER www-data
+
+# إعداد Entrypoint لبدء التطبيق باستخدام php-fpm
+CMD ["php-fpm"]
