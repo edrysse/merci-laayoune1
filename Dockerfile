@@ -41,5 +41,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # فتح المنفذ 80 ليتمكن Render من اكتشافه
 EXPOSE 80
 
-# تشغيل Nginx و php-fpm
+# تشغيل Nginx و php-fpm معًا
 CMD service nginx start && php-fpm
