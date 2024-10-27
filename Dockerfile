@@ -1,8 +1,9 @@
 # استخدام صورة PHP 8.2 مع FPM
 FROM php:8.2-fpm
 
-# تثبيت الحزم اللازمة
+# تثبيت الحزم اللازمة و Nginx
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    nginx \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
@@ -31,14 +32,14 @@ RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage \
     && chmod -R 755 /var/www/bootstrap/cache
 
-# تثبيت مكتبات Composer مع السماح بتشغيله كـ root
+# تثبيت مكتبات Composer
 RUN composer install --no-dev --optimize-autoloader
 
-# تحديد المنفذ 80 ليتمكن Render من اكتشافه
+# نسخ ملف إعدادات Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# فتح المنفذ 80 ليتمكن Render من اكتشافه
 EXPOSE 80
 
-# تعيين المستخدم إلى www-data
-USER www-data
-
-# إعداد Entrypoint لبدء التطبيق باستخدام php-fpm
-CMD ["php-fpm"]
+# تشغيل Nginx و php-fpm
+CMD service nginx start && php-fpm
