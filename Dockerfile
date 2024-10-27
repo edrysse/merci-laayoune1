@@ -36,6 +36,3 @@ RUN composer install --no-dev --optimize-autoloader
 
 # تعيين المستخدم إلى www-data
 USER www-data
-
-# إعداد Entrypoint لبدء السيرفر
-CMD php artisan serve --host=0.0.0.0 --port=8000
