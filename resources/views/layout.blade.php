@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my_site</title>
+
+    <!-- ضبط المسار الأساسي لتحميل الملفات المحلية -->
     <base href="/public">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- رابط محلي لـ CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -32,6 +34,7 @@
             integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
     </script>
 </head>
+
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:bisque !important">
     <div class="container">
