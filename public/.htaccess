@@ -24,7 +24,7 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
-# CORS Settings: Allow all origins
+# CORS Settings: Allow all origins for specific resources
 <IfModule mod_headers.c>
     Header always set Access-Control-Allow-Origin "*"
     Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
@@ -61,7 +61,7 @@
     ExpiresByType image/webp "access plus 1 month"
 </IfModule>
 
-# Allow access to specific static files that are blocked
+# Allow CORS for Static Files
 <FilesMatch "\.(css|js|ttf|woff|woff2|svg|png|jpg|jpeg|gif)$">
     Header always set Access-Control-Allow-Origin "*"
 </FilesMatch>
